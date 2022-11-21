@@ -22,6 +22,8 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^3.1.0",
+    "@testing-library/jest-native": "^5.3.0",
+    "@testing-library/react-native": "^11.5.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^28.1.7",
     "@types/react": "^18.0.21",
@@ -45,6 +47,10 @@
       "jsx",
       "json",
       "node"
+    ],
+    "setupFilesAfterEnv": ["./config/jest/setup.ts"],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@react-native|@react-native-community|@react-navigation)"
     ]
   }
 }
