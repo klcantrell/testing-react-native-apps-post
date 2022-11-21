@@ -11,7 +11,7 @@ import { type CompositeScreenProps } from '@react-navigation/native';
 
 import HomeScreen from './HomeScreen';
 import AuthScreen from './AuthScreen';
-import SettingsScreen from './SettingsScren';
+import SettingsScreen from './SettingsScreen';
 import { Image } from 'react-native';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
