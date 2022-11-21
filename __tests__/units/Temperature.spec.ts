@@ -13,6 +13,6 @@ describe('Temperature model', () => {
 
       expect(actual.valueCelsius).toBe(expected.celsius);
       expect(actual.valueFahrenheit).toBe(expected.fahrenheit);
-    },
+    }
   );
 });

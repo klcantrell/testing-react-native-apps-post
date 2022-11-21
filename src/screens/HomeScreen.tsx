@@ -15,7 +15,7 @@ type CurrentWeatherState =
   | { type: 'error' };
 
 export default function HomeScreen(
-  _props: MainTabScreenProps<MainTabRoutes.Home>,
+  _props: MainTabScreenProps<MainTabRoutes.Home>
 ) {
   const [weatherState, setWeatherState] = useState<CurrentWeatherState>({
     type: 'initial',
@@ -39,7 +39,10 @@ export default function HomeScreen(
   if (weatherState.type === 'loading' || weatherState.type === 'initial') {
     return (
       <HomeScreenContainer>
-        <ActivityIndicator style={{ marginBottom: 128 }} />
+        <ActivityIndicator
+          testID="homeScreenLoadingIndicator"
+          style={{ marginBottom: 128 }}
+        />
       </HomeScreenContainer>
     );
   }
@@ -48,6 +51,7 @@ export default function HomeScreen(
     return (
       <HomeScreenContainer>
         <Text
+          testID="homeScreenErrorMessage"
           style={{
             marginBottom: 128,
             fontSize: 21,
@@ -85,6 +89,7 @@ export default function HomeScreen(
           Current temperature
         </Text>
         <Text
+          testID="homeScreenTemperatureMessage"
           style={{
             fontSize: 42,
             paddingHorizontal: 32,
@@ -103,6 +108,7 @@ function HomeScreenContainer({ children }: PropsWithChildren) {
 
   return (
     <View
+      testID="homeScreenContainer"
       style={{
         flex: 1,
         ...paddingFromInsets(insets),

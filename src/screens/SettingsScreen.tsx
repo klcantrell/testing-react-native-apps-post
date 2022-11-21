@@ -7,7 +7,7 @@ import { paddingFromInsets } from '../utils';
 import { MainTabRoutes, type MainTabScreenProps } from './RootNavigator';
 
 export default function SettingsScreen(
-  _props: MainTabScreenProps<MainTabRoutes.Settings>,
+  _props: MainTabScreenProps<MainTabRoutes.Settings>
 ) {
   const { preference, setPreference } = useUnitPreference();
 
@@ -15,6 +15,8 @@ export default function SettingsScreen(
     <SettingsScreenContainer>
       <View style={{ marginBottom: 128, flexDirection: 'row' }}>
         <Pressable
+          testID="settingsButtonCelsius"
+          accessibilityState={{ selected: preference === 'celsius' }}
           onPress={() => setPreference('celsius')}
           style={{
             paddingVertical: 16,
@@ -36,6 +38,8 @@ export default function SettingsScreen(
           </Text>
         </Pressable>
         <Pressable
+          testID="settingsButtonFahrenheit"
+          accessibilityState={{ selected: preference === 'fahrenheit' }}
           onPress={() => setPreference('fahrenheit')}
           style={{
             paddingVertical: 16,

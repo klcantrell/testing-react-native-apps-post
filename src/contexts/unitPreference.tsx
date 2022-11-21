@@ -19,11 +19,18 @@ const UnitPreferenceContext = createContext<UnitPreferenceContextValue>({
   setPreference: () => {},
 });
 
+interface UnitPreferenceProviderProps {
+  initialData?: {
+    preference: UnitPreference;
+  };
+}
+
 export default function UnitPreferenceProvider({
   children,
-}: PropsWithChildren) {
+  initialData,
+}: PropsWithChildren<UnitPreferenceProviderProps>) {
   const [preference, setPreference] = useState<UnitPreference>(
-    DEFAULT_UNIT_PREFERENCE,
+    initialData?.preference ?? DEFAULT_UNIT_PREFERENCE
   );
 
   return (
