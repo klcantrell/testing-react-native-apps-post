@@ -7,7 +7,16 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "uitest-build:ios-debug": "detox build --configuration ios.sim.debug",
+    "uitest-run:ios-debug": "detox test --configuration ios.sim.debug",
+    "uitest-build:ios-release": "detox build --configuration ios.sim.release",
+    "uitest-run:ios-release": "detox test --configuration ios.sim.release",
+    "uitest-build:android-debug": "detox build --configuration android.emu.debug",
+    "uitest-run:android-debug": "detox test --configuration android.emu.debug",
+    "uitest-build:android-release": "detox build --configuration android.emu.release",
+    "uitest-run:android-release": "detox test --configuration android.emu.release",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "launch-android-emulator": "emulator -avd Pixel_3a_API_30_x86 -no-snapshot -no-audio -no-boot-anim -accel on -memory 2048 -partition-size 2048 -wipe-data -read-only"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.4.0",
@@ -32,11 +41,13 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "babel-jest": "^28.1.3",
+    "detox": "^20.0.3",
     "eslint": "^8.22.0",
     "jest": "^28.1.3",
     "metro-react-native-babel-preset": "0.72.3",
     "react-test-renderer": "18.1.0",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "ts-jest": "^28.0.8"
   },
   "jest": {
     "preset": "react-native",
@@ -48,7 +59,9 @@
       "json",
       "node"
     ],
-    "setupFilesAfterEnv": ["./config/jest/setup.ts"],
+    "setupFilesAfterEnv": [
+      "./config/jest/setup.ts"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|@react-native|@react-native-community|@react-navigation)"
     ]

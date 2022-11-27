@@ -25,6 +25,7 @@ function AuthScreenContainer({ children }: PropsWithChildren) {
 
   return (
     <View
+      testID="authScreenContainer"
       style={{
         flex: 1,
         ...paddingFromInsets(insets),

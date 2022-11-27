@@ -1,0 +1,15 @@
+// prettier-ignore
+{
+  "extends": "../config/typescript/tsconfig.base",
+  "compilerOptions": {
+    "isolatedModules": false,
+    "types": [
+      "node",
+      "detox",
+      "jest"
+    ],
+  },
+  "include": [
+    "**/*.test.ts"
+  ]
+}
