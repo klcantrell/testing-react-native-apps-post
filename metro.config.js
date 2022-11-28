@@ -4,8 +4,15 @@
  *
  * @format
  */
+const defaultSourceExts =
+  require('metro-config/src/defaults/defaults').sourceExts;
 
 module.exports = {
+  resolver: {
+    sourceExts: process.env.DETOX_MOCK_EXT
+      ? process.env.DETOX_MOCK_EXT.split(',').concat(defaultSourceExts)
+      : defaultSourceExts,
+  },
   transformer: {
     getTransformOptions: async () => ({
       transform: {

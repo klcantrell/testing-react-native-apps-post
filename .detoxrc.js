@@ -15,27 +15,27 @@ module.exports = {
       binaryPath:
         'ios/build/Build/Products/Debug-iphonesimulator/TestingReactNativeAppsPost.app',
       build:
-        'xcodebuild -workspace ios/TestingReactNativeAppsPost.xcworkspace -scheme TestingReactNativeAppsPost -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
+        'RCT_NO_LAUNCH_PACKAGER=true DETOX_MOCK_EXT=mock.ts xcodebuild -workspace ios/TestingReactNativeAppsPost.xcworkspace -scheme TestingReactNativeAppsPost -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
     },
     'ios.release': {
       type: 'ios.app',
       binaryPath:
         'ios/build/Build/Products/Release-iphonesimulator/TestingReactNativeAppsPost.app',
       build:
-        'xcodebuild -workspace ios/TestingReactNativeAppsPost.xcworkspace -scheme TestingReactNativeAppsPost -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
+        'RCT_NO_LAUNCH_PACKAGER=true DETOX_MOCK_EXT=mock.ts xcodebuild -workspace ios/TestingReactNativeAppsPost.xcworkspace -scheme TestingReactNativeAppsPost -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
     },
     'android.debug': {
       type: 'android.apk',
       binaryPath: 'android/app/build/outputs/apk/debug/app-debug.apk',
       build:
-        'cd android ; ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug ; cd -',
+        'cd android ; RCT_NO_LAUNCH_PACKAGER=true DETOX_MOCK_EXT=mock.ts ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug ; cd -',
       reversePorts: [8081],
     },
     'android.release': {
       type: 'android.apk',
       binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
       build:
-        'cd android ; ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release ; cd -',
+        'cd android ; RCT_NO_LAUNCH_PACKAGER=true DETOX_MOCK_EXT=mock.ts ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release ; cd -',
     },
   },
   devices: {

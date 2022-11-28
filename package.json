@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "start:uitest": "DETOX_MOCK_EXT=mock.ts react-native start",
     "test": "jest",
     "uitest-build:ios-debug": "detox build --configuration ios.sim.debug",
     "uitest-run:ios-debug": "detox test --configuration ios.sim.debug",
