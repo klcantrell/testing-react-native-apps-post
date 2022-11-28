@@ -12,6 +12,7 @@ export default function AuthScreen({
     <AuthScreenContainer>
       <View style={{ marginBottom: 128, width: 92, height: 65 }}>
         <Button
+          testID="loginButton"
           onPress={() => navigation.replace(RootStackRoutes.Main)}
           title="Log In"
         />
@@ -25,7 +26,6 @@ function AuthScreenContainer({ children }: PropsWithChildren) {
 
   return (
     <View
-      testID="authScreenContainer"
       style={{
         flex: 1,
         ...paddingFromInsets(insets),

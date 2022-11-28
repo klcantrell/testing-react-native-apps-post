@@ -36,12 +36,12 @@ function TabNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        options={{ tabBarIcon: HomeTabIcon }}
+        options={{ tabBarIcon: HomeTabIcon, tabBarTestID: 'homeTab' }}
         component={HomeScreen}
         name={MainTabRoutes.Home}
       />
       <Tab.Screen
-        options={{ tabBarIcon: SettingsTabIcon }}
+        options={{ tabBarIcon: SettingsTabIcon, tabBarTestID: 'settingsTab' }}
         component={SettingsScreen}
         name={MainTabRoutes.Settings}
       />
