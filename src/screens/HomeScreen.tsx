@@ -108,6 +108,7 @@ function HomeScreenContainer({ children }: PropsWithChildren) {
 
   return (
     <View
+      testID="homeScreenContainer"
       style={{
         flex: 1,
         ...paddingFromInsets(insets),
